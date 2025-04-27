@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 390px; /* Ширина контейнера адаптивная */
+    max-width: 340px; /* Ширина контейнера адаптивная */
     margin: 0 auto; /* Центрирование контейнера */
 }
 
@@ -15,36 +15,24 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 колонки по умолчанию */
     grid-template-rows: repeat(3, 200px); /* 3 строки */
-    gap: 0px; /* Уменьшаем расстояние между колонками */
+    gap: 10px; /* Уменьшаем расстояние между колонками */
     padding: 10px;
     justify-items: center; /* Выравнивание элементов по центру */
     align-items: center; /* Выравнивание по вертикали */
 }
 
-/* Для экранов шириной меньше 768px */
-@media (max-width: 768px) {
-    .inner {
-        grid-template-columns: 1fr 1fr; /* 2 колонки */
-        grid-template-rows: repeat(3, 200px); /* 3 строки */
-    }
-}
-
-/* Для экранов шириной меньше 480px */
-@media (max-width: 480px) {
-    .inner {
-        grid-template-columns: 1fr; /* 1 колонка */
-        grid-template-rows: repeat(6, 200px); /* 6 строк */
-    }
-}
-
 .img {
     width: 150px;
     height: 150px;
-    margin-bottom: 1.25px; /* Отступ между изображением и кнопкой */
+    margin-bottom: 2px; /* Отступ между изображением и кнопкой */
 }
 
 .item {
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Элементы будут располагаться по вертикали */
+    justify-content: center; /* По центру по вертикали */
+    align-items: center; /* По центру по горизонтали */
 }
 
 .btn {
@@ -58,10 +46,27 @@ body {
     font-weight: 700;
 
     transition: background .2s linear;
+    margin-top: 10px; /* Добавляем отступ сверху между картинкой и кнопкой */
 }
 
 .btn:hover {
     background: lightgreen;
+}
+
+/* Для экранов шириной меньше 768px */
+@media (max-width: 768px) {
+    .inner {
+        grid-template-columns: 1fr 1fr; /* 2 колонки */
+        grid-template-rows: repeat(3, 200px); /* 3 строки */
+    }
+}
+
+/* Для экранов шириной меньше 480px */
+@media (max-width: 580px) {
+    .inner {
+        grid-template-columns: 1fr; /* 1 колонка */
+        grid-template-rows: repeat(6, 200px); /* 6 строк */
+    }
 }
 
 .usercard {
